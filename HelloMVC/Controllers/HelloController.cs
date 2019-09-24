@@ -12,9 +12,17 @@ namespace HelloMVC.Controllers
         {
             string html = "<form method='post'> " +
                 "<input type='text' name='name' />" +
+                "<select name = 'language'>" +
+                "< option value = 'Hello' > English </ option >" +
+                "< option value = 'Hola' > Spanish </ option >" +
+                "< option value = 'Bonjour' > French </ option >" +
+                "< option value = '今日は' > Japanese </ option >" +
+                "< option value = '안녕하세요' > Korean </ option >" +
+                "</ select > " +
                 "<input type='submit' value='Greet me!' />" +
                 "</form>";
             return Content(html, "text/html");
+            //return Redirect("/Hello/Goodbye");
         }
 
         [Route("/Hello")]
@@ -35,7 +43,6 @@ namespace HelloMVC.Controllers
             return Content(string.Format("<h1>Hello {0}</h1>", name), "text/html");
 
         }
-
 
         // /Hello/Goodbye
         // alter the route to this controller to be: /Hello/Aloha
